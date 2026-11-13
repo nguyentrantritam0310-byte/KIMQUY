@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng tin nhà đất | Kim Quy Land</title>
+  <meta name="description" content="Đăng thông tin mua bán hoặc cho thuê bất động sản trên Kim Quy Land.">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/post.css">
+  <script src="js/shared-shell.js" defer></script>
+  <script src="js/post-page.js" defer></script>
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="post-main wrap">
+    <header class="post-intro"><span class="page-eyebrow">Kim Quy Land</span><h1>Đăng tin bất động sản</h1></header>
+    <div class="post-layout">
+      <form class="post-form" id="postForm" novalidate>
+        <section class="post-section" aria-labelledby="postContentTitle">
+          <div class="post-section-head"><span>01</span><div><h2 id="postContentTitle">Thông tin bất động sản</h2><p>Thông tin chính hiển thị trên tin đăng</p></div></div>
+          <div class="post-fields">
+            <fieldset class="post-choice wide"><legend>Nhu cầu</legend><div class="post-segment"><label><input type="radio" name="deal" value="sale" checked><span>Bán</span></label><label><input type="radio" name="deal" value="rent"><span>Cho thuê</span></label></div></fieldset>
+            <label>Loại hình<select name="type" required><option value="">Chọn loại hình</option><option>Căn hộ chung cư</option><option>Nhà riêng</option><option>Biệt thự / liền kề</option><option>Nhà mặt phố</option><option>Shophouse</option><option>Đất</option><option>Phòng trọ</option><option>Văn phòng</option><option>Kho xưởng</option><option>Ki-ốt</option><option>Căn hộ mini</option></select></label>
+            <label class="wide">Tiêu đề tin<input name="title" type="text" maxlength="120" placeholder="Ví dụ: Căn hộ 2 phòng ngủ gần trung tâm" required></label>
+            <label><span id="priceLabel">Giá bán (tỷ đồng)</span><input name="price" type="number" min="0.01" step="0.01" placeholder="0" required></label>
+            <label>Diện tích (m²)<input name="area" type="number" min="1" step="0.1" placeholder="0" required></label>
+            <label>Phòng ngủ<select name="beds"><option value="0">Không có / không áp dụng</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></label>
+            <label>Phòng tắm<select name="baths"><option value="0">Không có / không áp dụng</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></label>
+            <label>Hướng<select name="direction"><option value="">Chọn hướng</option><option>Đông</option><option>Tây</option><option>Nam</option><option>Bắc</option><option>Đông Nam</option><option>Đông Bắc</option><option>Tây Nam</option><option>Tây Bắc</option></select></label>
+            <label>Nội thất<select name="furnishing"><option value="none">Không nội thất</option><option value="basic">Cơ bản</option><option value="full">Đầy đủ</option></select></label>
+            <label class="wide">Giấy tờ<select name="legal"><option value="">Chọn tình trạng giấy tờ</option><option>Sổ hồng</option><option>Sổ đỏ</option><option>Hợp đồng mua bán</option><option>Hợp đồng thuê</option><option>Giấy tờ khác</option></select></label>
+            <fieldset class="post-choice wide"><legend>Tiện ích</legend><div class="amenity-list"><label><input type="checkbox" name="amenities" value="Thang máy"><span>Thang máy</span></label><label><input type="checkbox" name="amenities" value="Hồ bơi"><span>Hồ bơi</span></label><label><input type="checkbox" name="amenities" value="Gym"><span>Gym</span></label><label><input type="checkbox" name="amenities" value="Ban công"><span>Ban công</span></label><label><input type="checkbox" name="amenities" value="Chỗ đỗ xe"><span>Chỗ đỗ xe</span></label><label><input type="checkbox" name="amenities" value="An ninh 24/7"><span>An ninh 24/7</span></label><label><input type="checkbox" name="amenities" value="Gần trường"><span>Gần trường</span></label><label><input type="checkbox" name="amenities" value="Gần chợ"><span>Gần chợ</span></label></div></fieldset>
+            <label class="wide">Mô tả<textarea name="description" rows="5" placeholder="Mô tả hiện trạng, tiện ích và điểm nổi bật"></textarea></label>
+          </div>
+        </section>
+
+        <section class="post-section" aria-labelledby="postLocationTitle">
+          <div class="post-section-head"><span>02</span><div><h2 id="postLocationTitle">Vị trí bất động sản</h2><p>Địa chỉ và khu vực hiển thị trên tin</p></div></div>
+          <div class="post-fields">
+            <label>Tỉnh / thành<select name="city" id="postCity" required><option value="">Chọn tỉnh / thành</option><option>TP. Hồ Chí Minh</option><option>Hà Nội</option><option>Đà Nẵng</option></select></label>
+            <label>Phường / xã<select name="ward" id="postWard" required disabled><option value="">Chọn phường / xã</option></select></label>
+            <label class="wide">Địa chỉ<input name="address" type="text" placeholder="Số nhà, tên đường" required></label>
+            <div class="post-map-search wide"><label for="mapAddress">Tìm địa chỉ trên bản đồ</label><div><input id="mapAddress" type="search" placeholder="Nhập địa chỉ cần tìm"><button type="button" id="mapSearch">Tìm</button><button type="button" id="mapLocate">Vị trí máy</button></div></div>
+            <label>Vĩ độ<input name="latitude" id="latitude" type="number" step="any" placeholder="10.7756"></label>
+            <label>Kinh độ<input name="longitude" id="longitude" type="number" step="any" placeholder="106.7019"></label>
+            <div class="post-map wide"><iframe id="postMap" title="Bản đồ vị trí bất động sản" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=106.69%2C10.76%2C106.72%2C10.79&amp;layer=mapnik&amp;marker=10.7756%2C106.7019"></iframe><p>Kéo bản đồ để tham khảo vị trí, nhập tọa độ để cập nhật điểm ghim.</p></div>
+            <label class="post-check wide"><input name="hideLocation" type="checkbox"><span>Ẩn vị trí chính xác trên bản đồ công khai</span></label>
+          </div>
+        </section>
+
+        <section class="post-section" aria-labelledby="postImagesTitle">
+          <div class="post-section-head"><span>03</span><div><h2 id="postImagesTitle">Hình ảnh</h2><p>Tối đa 12 ảnh, mỗi ảnh dưới 5 MB. Ảnh đầu tiên là ảnh đại diện.</p></div></div>
+          <div class="upload-area"><input id="postImages" name="images" type="file" accept="image/*" multiple hidden><button type="button" class="upload-trigger" id="uploadTrigger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m-5 5 5-5 5 5M4 16v4h16v-4"/></svg>Thêm ảnh</button><span id="imageCount">0/12 ảnh</span></div>
+          <div class="post-image-grid" id="postImageGrid"></div>
+          <p class="post-error" id="postImageError" aria-live="polite"></p>
+        </section>
+
+        <section class="post-section" aria-labelledby="postPackageTitle">
+          <div class="post-section-head"><span>04</span><div><h2 id="postPackageTitle">Gói tin</h2><p>Chọn mức ưu tiên hiển thị</p></div></div>
+          <div class="package-grid">
+            <label class="package-option"><input type="radio" name="package" value="normal" data-price="10000" checked><span><b>Tin thường</b><strong>10.000 đ/ngày</strong><small>Hiển thị cơ bản theo thời gian đăng.</small></span></label>
+            <label class="package-option"><input type="radio" name="package" value="silver" data-price="50000"><span><b>VIP Bạc</b><strong>50.000 đ/ngày</strong><small>Ưu tiên trung bình trên danh sách nổi bật.</small></span></label>
+            <label class="package-option"><input type="radio" name="package" value="gold" data-price="90000"><span><b>VIP Vàng</b><strong>90.000 đ/ngày</strong><small>Ưu tiên cao hơn VIP Bạc.</small></span></label>
+            <label class="package-option"><input type="radio" name="package" value="diamond" data-price="150000"><span><b>VIP Kim Cương</b><strong>150.000 đ/ngày</strong><small>Ưu tiên cao nhất trong danh sách nổi bật.</small></span></label>
+          </div>
+          <label class="post-days">Số ngày<select name="days" id="postDays"><option value="1">1 ngày</option><option value="3">3 ngày</option><option value="7">7 ngày</option><option value="10" selected>10 ngày</option><option value="15">15 ngày</option><option value="30">30 ngày</option></select></label>
+          <div class="post-total" aria-live="polite"><span>Tạm tính</span><strong id="postTotal">100.000 đ · Tin thường · 10 ngày</strong></div>
+        </section>
+
+        <p class="post-status" id="postStatus" role="status" aria-live="polite"></p>
+        <div class="post-actions"><button type="submit">Gửi tin đăng <span aria-hidden="true">→</span></button></div>
+      </form>
+      <aside class="post-aside"><h2>Thông tin đăng tin</h2><p>Ảnh đầu tiên được dùng làm ảnh đại diện.</p><ul><li>Tối đa 12 ảnh</li><li>Mỗi ảnh dưới 5 MB</li><li>Chọn một gói hiển thị</li></ul><div class="aside-summary"><span>Gói hiện tại</span><b id="asidePackage">Tin thường</b><span>Chi phí dự kiến</span><b id="asideTotal">100.000 đ</b></div></aside>
+    </div>
+  </main>
+  <div id="siteFooter"></div>
+</body>
+</html>

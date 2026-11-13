@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nhà đất cho thuê | Kim Quy Land</title>
+  <meta name="description" content="Tìm nhà đất cho thuê theo nhu cầu, khu vực và ngân sách.">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/listing.css">
+  <script src="js/shared-shell.js" defer></script>
+  <script src="js/listing-page.js" defer></script>
+</head>
+<body data-deal="rent">
+  <div id="siteHeader"></div>
+  <main class="listing-main wrap">
+    <header class="page-intro"><div><span class="page-eyebrow">Không gian tìm kiếm</span><h1>Nhà đất cho thuê</h1><p>Chọn nơi ở hoặc mặt bằng phù hợp thời hạn và ngân sách.</p></div></header>
+    <form class="quick-search" id="filters" autocomplete="off">
+      <input id="keyword" name="q" type="search" placeholder="Nhập tiêu đề, địa chỉ hoặc mã tin" aria-label="Tìm theo tiêu đề, địa chỉ hoặc mã tin">
+      <button type="submit">Tìm tin</button>
+      <details class="filter-box">
+        <summary><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M7 12h10m-7 7h4"/><circle cx="8" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>Bộ lọc nâng cao</span><small>Khu vực, mức giá, diện tích và tiện ích</small></summary>
+        <div class="filters-body">
+          <div class="filter-fields">
+            <label class="filter-field">Nhu cầu<select name="deal"><option value="sale">Nhà đất bán</option><option value="rent" selected>Nhà đất cho thuê</option></select></label>
+            <label class="filter-field">Loại hình<select name="type"><option value="">Tất cả loại hình</option><option>Căn hộ</option><option>Nhà riêng</option><option>Biệt thự / liền kề</option><option>Nhà mặt phố</option><option>Shophouse</option><option>Đất</option><option>Phòng trọ</option><option>Văn phòng</option><option>Kho xưởng</option><option>Ki-ốt</option><option>Căn hộ mini</option></select></label>
+            <label class="filter-field">Tỉnh / thành phố<select id="city" name="city"><option value="">Toàn quốc</option></select></label>
+            <label class="filter-field">Phường / xã<select id="ward" name="ward" disabled><option value="">Tất cả phường / xã</option></select></label>
+            <label class="filter-field">Giá tối thiểu (VNĐ/tháng)<input name="minPrice" type="number" min="0" placeholder="Không giới hạn"></label>
+            <label class="filter-field">Giá tối đa (VNĐ/tháng)<input name="maxPrice" type="number" min="0" placeholder="Không giới hạn"></label>
+            <label class="filter-field">Diện tích tối thiểu (m²)<input name="minArea" type="number" min="0" placeholder="Từ diện tích"></label>
+            <label class="filter-field">Đơn giá tối đa (VNĐ/m²)<input name="maxUnit" type="number" min="0" placeholder="Không giới hạn"></label>
+            <label class="filter-field">Phòng ngủ<select name="beds"><option value="">Không giới hạn</option><option value="1">Tối thiểu 1</option><option value="2">Tối thiểu 2</option><option value="3">Tối thiểu 3</option><option value="4">Tối thiểu 4</option></select></label>
+            <label class="filter-field">Phòng tắm<select name="baths"><option value="">Không giới hạn</option><option value="1">Tối thiểu 1</option><option value="2">Tối thiểu 2</option><option value="3">Tối thiểu 3</option><option value="4">Tối thiểu 4</option></select></label>
+            <label class="filter-field">Hướng nhà<select name="direction"><option value="">Tất cả hướng</option><option>Đông</option><option>Tây</option><option>Nam</option><option>Bắc</option><option>Đông Nam</option><option>Đông Bắc</option><option>Tây Nam</option><option>Tây Bắc</option></select></label>
+            <label class="filter-field">Tình trạng nội thất<select name="furnishing"><option value="">Tất cả tình trạng</option><option value="full">Đầy đủ</option><option value="basic">Cơ bản</option><option value="none">Không nội thất</option></select></label>
+            <label class="filter-field filter-span-2">Giấy tờ pháp lý<select name="legal"><option value="">Tất cả giấy tờ</option><option value="ownership">Sổ đỏ / sổ hồng</option><option value="contract">Hợp đồng thuê / mua bán</option><option value="other">Khác / chưa rõ</option></select></label>
+          </div>
+          <div class="filter-footer"><p>Tin VIP được ưu tiên trước trong mọi chế độ sắp xếp.</p><div class="filter-buttons"><button type="reset">Xóa bộ lọc</button><button class="apply-filters" type="submit">Áp dụng</button></div></div>
+        </div>
+      </details>
+    </form>
+    <section aria-labelledby="resultTitle"><div class="results-heading"><div><h2 id="resultTitle">Tin nhà đất đang cho thuê</h2><span id="count" aria-live="polite"></span></div><label class="sort-control">Sắp xếp<select id="sort"><option value="newest">Mới đăng</option><option value="price-asc">Giá thấp đến cao</option><option value="price-desc">Giá cao đến thấp</option><option value="area-desc">Diện tích lớn đến nhỏ</option></select></label></div><div class="listing-grid" id="cards"></div><nav class="listing-pagination" id="pagination" aria-label="Phân trang kết quả"></nav></section>
+  </main>
+  <div id="siteFooter"></div>
+</body>
+</html>
